@@ -1,0 +1,72 @@
+<ion-app>
+  <ion-split-pane contentId="main-content">
+    <ion-menu contentId="main-content" type="overlay">
+        <ion-toolbar color="primary">
+    <ion-title>Menú</ion-title>
+  </ion-toolbar>
+      <ion-content fullscreen>    
+        <ion-list>
+         <ion-menu-toggle auto-hide="false">
+           
+          <ion-item button [routerLink]="['/ayudantes']" >
+            <ion-icon slot="start" name="people" style="color:#8c54fc"></ion-icon>
+            <ion-label> <h3>Vendedores Registrados</h3> </ion-label>
+          </ion-item>
+
+          <ion-item button [routerLink]="['/usuarios']" >
+            <ion-icon slot="start" name="people" style="color:#8c54fc"></ion-icon>
+            <ion-label> <h3>Usuarios Registrados</h3> </ion-label>
+          </ion-item>
+
+          <ion-item button [routerLink]="['/locales-registrados']" >
+            <ion-icon slot="start" name="home-outline" style="color:#8c54fc"></ion-icon>
+            <ion-label> <h3>Locales Registrados</h3> </ion-label>
+          </ion-item>
+
+          <ion-item button [routerLink]="['/comentarios']" >
+            <ion-icon slot="start" name="chatbubbles-outline" style="color:#8c54fc"></ion-icon>
+              <ion-label> <h3>Comentarios</h3> </ion-label>
+          </ion-item>
+
+
+           <!-- <ion-item button [routerLink]="['/usuarios-pendientes']" >
+              <ion-icon slot="start" name="people" style="color:#8c54fc"></ion-icon>
+              <ion-label> <h3>Usuarios Pendientes</h3> </ion-label>
+            </ion-item> -->
+
+            <ion-item button [routerLink]="['/ayudantes-pendientes']" >
+            <ion-icon slot="start" name="person" style="color:#8c54fc"></ion-icon>
+              <ion-label> <h3>Vendedores Pendientes</h3> </ion-label>
+            </ion-item>
+
+            <ion-item button [routerLink]="['/premium-pendientes']" >
+            <ion-icon slot="start" name="person" style="color:#8c54fc"></ion-icon>
+              <ion-label> <h3>Premium Pendientes</h3> </ion-label>
+            </ion-item>
+
+            <ion-item button [routerLink]="['/materias-pendientes']">
+              <ion-icon slot="start" name="library-outline" style="color:#8c54fc"></ion-icon>
+                <ion-label> <h3>Categorias Pendientes</h3> </ion-label>
+            </ion-item>
+
+            
+
+            <ion-item button [routerLink]="['/pago']" >
+              <ion-icon slot="start" name="build-outline" style="color:#8c54fc"></ion-icon>
+                <ion-label> <h3>Configuraciones</h3> </ion-label>
+            </ion-item>
+
+            <ion-item button (click)="logOutUser()">
+              <ion-icon slot="start" name="power" style="color:#8c54fc"></ion-icon>
+              <ion-label> <h3>Cerrar Sesión</h3> </ion-label>
+            </ion-item>
+
+          
+            </ion-menu-toggle>
+        </ion-list>
+
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

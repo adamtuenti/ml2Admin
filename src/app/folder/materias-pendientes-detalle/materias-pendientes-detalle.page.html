@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons>
+      <ion-menu-button>
+      </ion-menu-button>
+      <ion-title>Categoría Pendiente</ion-title>
+    </ion-buttons>    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+   <ion-card-header>
+    <ion-card-subtitle>Categoría Solicitada: </ion-card-subtitle>
+    <ion-card-title>{{comentario.Titulo}}</ion-card-title>
+  </ion-card-header>
+    <ion-card-content>
+      <ion-card-subtitle>Usuario Solicitante: </ion-card-subtitle>
+      <ion-item>
+        <ion-icon name="person-outline" size="large" style="margin-right: 8px;"></ion-icon>
+        <ion-label style="font-size: 17px;">{{user.Nombre}} {{user.Apellido}}</ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="key-outline" size="large" style="margin-right: 8px;"></ion-icon>
+        <ion-label style="font-size: 17px;">{{id}}</ion-label>
+      </ion-item>
+
+      <ion-item>
+        <a href= 'https://api.whatsapp.com/send?phone={{user.Telefono}}'><ion-icon name="logo-whatsapp" size="large" color="success" style="margin-right: 8px;"></ion-icon></a>
+        <ion-label style="font-size: 17px;">{{user.Telefono}}</ion-label>
+      </ion-item>
+
+      <ion-button expand="block" (click)="aceptar(user.Correo,comentario.Titulo)" style="margin:auto;width: 225px;margin-top:7.5px">Aceptar</ion-button>   
+    </ion-card-content>
+  </ion-card>
+
+  
+  <!-- <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Categorías existentes: </ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>   
+      <ion-list>
+        <ng-container *ngFor="let categoria of categorias">
+          <ion-item>
+            <ion-avatar slot="start">
+              <img src="{{categoria.Icono}}">
+            </ion-avatar>
+            <ion-label>
+              <h2>{{categoria.Nombre}}</h2>
+            </ion-label>
+          </ion-item>
+        </ng-container>
+      </ion-list>
+    </ion-card-content>
+  </ion-card> -->
+
+</ion-content>

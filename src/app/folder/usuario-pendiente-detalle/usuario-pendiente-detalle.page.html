@@ -1,0 +1,94 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons>
+      <ion-menu-button>
+      </ion-menu-button>
+      <ion-title>Usuario Pendiente</ion-title>
+    </ion-buttons>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content> 
+
+  <ion-item style="margin-bottom: 3.5px">
+  
+    <ion-button  expand="full"  expand="full" href="{{user.FotoPerfil}}" style="margin-top: 3.5px;font-size: 15px;margin-right: 7.5px;">Perfil</ion-button>
+
+    <ion-row>
+      <img src="{{user.FotoPerfil}}" alet="foto" style="width: 250px; height: 225px;margin-top: 3.5px;margin-bottom: 3.5px;">
+    </ion-row>
+    
+ 
+    
+    
+
+  </ion-item>
+  
+  <ion-item>
+    <ion-button  expand="full"  expand="full" href="{{user.Foto}}" style="margin-top: 3.5px;font-size: 15px;margin-right: 7.5px;">Carnet</ion-button>
+    <img src="{{user.Foto}}" alet="foto" style="width: 250px; height: 225px;margin-top: 3.5px;margin-bottom: 3.5px;">
+
+  </ion-item>
+
+
+  
+ 
+   
+  <ion-card>
+
+    <ion-item>
+      <ion-icon name="person-outline" size="large" style="margin-right: 8px;"></ion-icon>
+      <ion-label style="font-size: 17px;">{{user.Nombre}} {{user.Apellido}}</ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="key-outline" size="large" style="margin-right: 8px;"></ion-icon>
+      <ion-label style="font-size: 17px;">{{id}}</ion-label>
+    </ion-item>
+
+    <ion-item>
+      <a href="mailto:{{user.Correo}}"><ion-icon name="mail-outline" size="large" color="success" style="margin-right: 8px;"></ion-icon></a>
+      <ion-label>{{user.Correo}}</ion-label>
+    </ion-item>
+
+    <ion-item>
+      <a href= 'https://api.whatsapp.com/send?phone={{user.Telefono}}'><ion-icon name="logo-whatsapp" size="large" color="success" style="margin-right: 8px;"></ion-icon></a>
+      <ion-label style="font-size: 17px;">{{user.Telefono}}</ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="card-outline" size="large" style="margin-right: 8px;"></ion-icon>
+      <ion-label style="font-size: 17px;">{{user.Matricula}}</ion-label>
+    </ion-item>    
+
+  </ion-card>
+  <div>
+    <ion-button expand="block" disabled = 'true' style="width: 175px;margin-top: 7.5px;margin-bottom: 7.5px;margin:auto;"(click)="aceptar()">Aceptar</ion-button>
+
+  </div>
+  <div style="margin-top:7.5px;margin-bottom: 7.5px;">
+    <ion-button expand="block" style="width: 175px;margin-top: 10px;margin-bottom: 7.5px;margin:auto;"(click)="aceptarTemporal()">Aceptar Temporal</ion-button>
+
+  </div>
+  
+  
+
+
+</ion-content>
+
+
+<style>
+  .circle-pic {     
+    width: 55%;
+    height: 25%;
+    margin: auto;
+    display: block;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    /* -webkit-border-radius: 50%;
+    border-radius: 50%;
+    border-width: 50px; */
+
+  }
+</style>

@@ -1,0 +1,48 @@
+
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons>
+      <ion-menu-button>
+      </ion-menu-button>
+      <ion-title>Vendedores Registrados</ion-title>
+    </ion-buttons>    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!-- <ion-item>
+    <label style="font-size: 15px;">Cantidad de ayudantes registrados: {{ayudantes.length}}</label>
+  </ion-item> -->
+
+<ion-searchbar
+    color="light" 
+    placeholder = "Buscar usuario..."
+    animated
+    (ionChange)="buscar($event)">
+  </ion-searchbar>
+ 
+  
+<ng-container *ngFor="let usuario of usuarios | filtroUsuario: textoBuscar">
+
+  <ng-container *ngIf="usuario.Vendedor">
+    <ion-item  [routerLink]="['/usuarios-detalle', usuario.id]" >
+
+        
+      <ion-thumbnail slot="start" slot="start">
+        <img src="{{usuario.Foto}}" alet="foto">
+      </ion-thumbnail>
+
+      
+      <ion-label>{{usuario.Nombre}} {{usuario.Apellido}} </ion-label>
+
+      
+    </ion-item>
+
+  </ng-container>
+      
+      
+    
+</ng-container>
+
+</ion-content>

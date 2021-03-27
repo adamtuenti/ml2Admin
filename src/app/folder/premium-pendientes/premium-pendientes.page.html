@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons>
+      <ion-menu-button>
+      </ion-menu-button>
+      <ion-title>Premium Pendientes</ion-title>
+    </ion-buttons>    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+<ion-searchbar
+    color="light" 
+    placeholder = "Buscar usuario..."
+    animated
+    (ionChange)="buscar($event)">
+  </ion-searchbar>
+
+<ion-list> 
+  <ng-container *ngFor="let usuario of usuarios | filtroUsuario: textoBuscar">
+    <ion-item *ngIf="usuario.EsperaPremium" [routerLink]="['/premium-pendientes-detalle', usuario.id]">
+
+      <ion-thumbnail slot="start" slot="start">
+        <img src="{{usuario.Foto}}" alet="foto">
+      </ion-thumbnail>
+      <ion-label>{{usuario.Nombre}} {{usuario.Apellido}} </ion-label>
+
+      
+    </ion-item>
+
+
+  </ng-container>
+      
+      
+</ion-list>
+
+</ion-content>
+

@@ -1,0 +1,5 @@
+1)ionic cordova build --release --prod android
+2)keytool -genkey -v -keystore TaskyAdmin_app -alias TaskyAdmin -keyalg RSA -keysize 2048 -validity 10000
+2.1)keytool -importkeystore -srckeystore TaskyAdmin_app -destkeystore TaskyAdmin_app -deststoretype pkcs12
+3)jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore TaskyAdmin_app platforms\android\app\build\outputs\apk\release\app-release-unsigned.apk TaskyAdmin
+4)zipalign -v 4 platforms\android\app\build\outputs\apk\release\app-release-unsigned.apk TaskyAdmin.apk

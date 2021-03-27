@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons>
+      <ion-menu-button>
+      </ion-menu-button>
+      <ion-title>Comentario Detalle</ion-title>
+    </ion-buttons>    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+
+      
+  
+
+    
+
+    <div align="center" style="margin-top: 25px;text-align: center;">
+      <ion-label style='font-size: 17.2px;font-weight: bold;'>{{comentario.Titulo}}</ion-label>
+
+    </div>
+      
+
+ 
+    <ion-item style="margin-top:35px">
+      <ion-icon name="person-outline" size="large" style="margin-right: 8px;"></ion-icon>
+      <ion-label style="font-size: 15px;">{{comentario.Usuario}}</ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="person-outline" size="large" style="margin-right: 8px;"></ion-icon>
+      <ion-label style="font-size: 17px;">{{usuario.Nombre}} {{usuario.Apellido}}</ion-label>
+    </ion-item>
+
+    <ion-item>
+      <a href= 'https://api.whatsapp.com/send?phone={{usuario.Telefono}}'><ion-icon name="logo-whatsapp" size="large" color="success" style="margin-right: 8px;"></ion-icon></a>
+      <ion-label>{{usuario.Telefono}}</ion-label>
+    </ion-item>
+    <ion-button expand="block" (click)="invisible()" style="width: 150px;margin:auto;margin-top:7.5px;margin-bottom: 7.5px;">Ocultar</ion-button>
+  </ion-card>
+ 
+
+</ion-content>

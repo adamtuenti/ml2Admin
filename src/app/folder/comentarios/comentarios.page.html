@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons>
+      <ion-menu-button>
+      </ion-menu-button>
+      <ion-title>Comentarios</ion-title>
+    </ion-buttons>    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ng-container *ngFor="let comentario of comentarios">
+      <ion-card [routerLink]="['/comentario-detalle', comentario.id]" *ngIf="comentario.Visibilidad == true && comentario.Tipo == 'sugerencia'">
+
+        <ion-card-header>
+
+          <ion-card-title>
+            <label style="font-size: 18.2px;font-weight: bold;color:black; align-items: center;text-align: center;">{{comentario.Titulo}}</label>
+          </ion-card-title>
+
+        </ion-card-header>
+
+        <!-- <ion-item>
+          
+        </ion-item> -->
+
+        <ion-card-content>
+          <label style="font-size: 15.5px;color:black; align-items: center;text-align: center;">{{comentario.Detalle}}</label>
+          
+        </ion-card-content>
+          
+    
+  
+        
+      </ion-card>
+  
+  
+    </ng-container>
+        
+        
+  </ion-list>
+  
+  </ion-content>
