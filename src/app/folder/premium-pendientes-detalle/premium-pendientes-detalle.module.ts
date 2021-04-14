@@ -8,6 +8,8 @@ import { PremiumPendientesDetallePageRoutingModule } from './premium-pendientes-
 
 import { PremiumPendientesDetallePage } from './premium-pendientes-detalle.page';
 
+import { EmailComposer } from '@ionic-native/email-composer/ngx';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -15,6 +17,7 @@ import { PremiumPendientesDetallePage } from './premium-pendientes-detalle.page'
     IonicModule,
     PremiumPendientesDetallePageRoutingModule
   ],
-  declarations: [PremiumPendientesDetallePage]
+  declarations: [PremiumPendientesDetallePage],
+  providers: [EmailComposer],
 })
 export class PremiumPendientesDetallePageModule {}

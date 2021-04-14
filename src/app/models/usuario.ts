@@ -14,4 +14,5 @@ export class Usuarios {
     Villa: string;
     Verificacion: boolean;
     EsperaPremium: boolean;
+    Cantidad: number;
 }

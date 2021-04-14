@@ -16,6 +16,7 @@ export class LocalDetallePage implements OnInit {
 
   public user: Usuarios = new Usuarios();
   public local: Locales = new Locales();
+  idUser;
   id: string;
 
   constructor(private usuarioService: UsuarioService,
@@ -28,7 +29,7 @@ export class LocalDetallePage implements OnInit {
     this.activateRoute.paramMap.subscribe(paramMap => {  
       const id = paramMap.get('id');
       this.id= id;
-      this.localesService.getLocal(id).subscribe(res => {this.local = res;this.usuarioService.getUsuario(res.Usuario).subscribe(res1 => {this.user =res1;});});
+      this.localesService.getLocal(id).subscribe(res => {this.local = res;this.usuarioService.getUsuario(res.Usuario).subscribe(res1 => {this.user =res1;this.idUser = res.Usuario;});});
     });
   }
 

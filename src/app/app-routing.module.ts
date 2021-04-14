@@ -92,7 +92,15 @@ const routes: Routes = [
   {
     path: 'local-detalle/:id',
     loadChildren: () => import('./folder/local-detalle/local-detalle.module').then( m => m.LocalDetallePageModule)
+  },  {
+    path: 'productos',
+    loadChildren: () => import('./folder/productos/productos.module').then( m => m.ProductosPageModule)
+  },
+  {
+    path: 'servicios',
+    loadChildren: () => import('./folder/servicios/servicios.module').then( m => m.ServiciosPageModule)
   }
+
 
 
 

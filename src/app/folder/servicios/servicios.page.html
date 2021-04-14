@@ -1,0 +1,55 @@
+
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons>
+      <ion-menu-button>
+      </ion-menu-button>
+      <ion-title>Servicios Registrados</ion-title>
+    </ion-buttons>    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-segment color="tertiary" value="servicios">
+
+    <ion-segment-button value="locales" [routerLink]="['/locales-registrados']" routerDirection="root">
+      <ion-icon name="home-outline" size="large"></ion-icon> <ion-label style="font-size: 11px;">Locales</ion-label>
+    </ion-segment-button>
+    
+    <ion-segment-button value="productos" [routerLink]="['/productos']" routerDirection="root">
+      <ion-icon name="bag-outline" size="large"></ion-icon> <ion-label style="font-size: 11px;">Productos</ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button value="servicios" [routerLink]="['/servicios']" routerDirection="root">
+      <ion-icon name="man-outline" size="large"></ion-icon> <ion-label style="font-size: 11px;">Servicios</ion-label>
+    </ion-segment-button>
+
+  </ion-segment>
+
+
+
+  <ion-item>
+    <label style="font-size: 15px;">Cantidad de servicios registrados: {{servicios.length}}</label>
+  </ion-item>
+
+ 
+  
+<ng-container *ngFor="let servicio of servicios">
+      
+      <ion-item>
+
+        
+        <ion-thumbnail slot="start" slot="start">
+          <img src="{{servicio.Foto}}" alet="foto">
+        </ion-thumbnail>
+
+        
+        <ion-label>{{servicio.Titulo}}</ion-label>
+
+        
+      </ion-item>
+    
+</ng-container>
+
+</ion-content>

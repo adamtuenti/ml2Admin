@@ -11,23 +11,50 @@
 
 <ion-content>
 
-  <ion-item>
-    <label style="font-size: 15px;">Cantidad de locales registrados: {{locales.length}}</label>
-  </ion-item>
+  <ion-segment color="tertiary" value="locales">
+
+    <ion-segment-button value="locales" [routerLink]="['/locales-registrados']" routerDirection="root">
+      <ion-icon name="home-outline" size="large"></ion-icon> <ion-label style="font-size: 11px;">Locales</ion-label>
+    </ion-segment-button>
+    
+    <ion-segment-button value="cartilla" [routerLink]="['/productos']" routerDirection="root">
+      <ion-icon name="bag-outline" size="large"></ion-icon> <ion-label style="font-size: 11px;">Productos</ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button value="grupos" [routerLink]="['/servicios']" routerDirection="root">
+      <ion-icon name="man-outline" size="large"></ion-icon> <ion-label style="font-size: 11px;">Servicios</ion-label>
+    </ion-segment-button>
+
+  </ion-segment>
+
+
+
+<ion-item>
+  <label style="font-size: 15px;">Cantidad de locales registrados: {{locales.length}}</label>
+</ion-item>
+
+<ion-searchbar
+  color="light" 
+  placeholder = "Buscar local..."
+  animated
+  (ionChange)="buscar($event)">
+</ion-searchbar>
 
  
   
-<ng-container *ngFor="let local of locales">
+<ng-container *ngFor="let local of locales | filtroLocal: textoBuscar">
       
-      <ion-item [routerLink]="['/local-detalle', local.id]" >
+      <ion-item *ngIf="local.Visibilidad">
 
         
-        <ion-thumbnail slot="start" slot="start">
+        <ion-thumbnail slot="start" slot="start" [routerLink]="['/local-detalle', local.id]" >
           <img src="{{local.Foto}}" alet="foto">
         </ion-thumbnail>
 
         
-        <ion-label>{{local.Nombre}}</ion-label>
+        <ion-label [routerLink]="['/local-detalle', local.id]" >{{local.Nombre}}</ion-label>
+
+        <ion-icon name="trash-outline" slot='end' color='danger'(click)="alert(local)"></ion-icon>
 
         
       </ion-item>

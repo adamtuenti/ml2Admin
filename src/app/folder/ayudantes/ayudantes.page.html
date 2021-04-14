@@ -11,6 +11,21 @@
 
 <ion-content>
 
+  <!-- <ion-segment color="tertiary" value="productos">
+
+    
+    
+    <ion-segment-button value="productos" [routerLink]="['/ayudantes']" routerDirection="root">
+      <ion-icon name="bag-outline" size="large"></ion-icon> <ion-label style="font-size: 11px;">Productos</ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button value="locales" [routerLink]="['/locales-vendedores']" routerDirection="root">
+      <ion-icon name="home-outline" size="large"></ion-icon> <ion-label style="font-size: 11px;">Locales</ion-label>
+    </ion-segment-button>
+
+
+  </ion-segment> -->
+
   <!-- <ion-item>
     <label style="font-size: 15px;">Cantidad de ayudantes registrados: {{ayudantes.length}}</label>
   </ion-item> -->
@@ -21,9 +36,13 @@
     animated
     (ionChange)="buscar($event)">
   </ion-searchbar>
+
+  <ion-item>
+    <label style="font-size: 15px;">Cantidad de vendedores registrados: {{vendedores.length}}</label>
+  </ion-item>
  
   
-<ng-container *ngFor="let usuario of usuarios | filtroUsuario: textoBuscar">
+<ng-container *ngFor="let usuario of vendedores | filtroUsuario: textoBuscar">
 
   <ng-container *ngIf="usuario.Vendedor">
     <ion-item  [routerLink]="['/usuarios-detalle', usuario.id]" >
@@ -34,7 +53,8 @@
       </ion-thumbnail>
 
       
-      <ion-label>{{usuario.Nombre}} {{usuario.Apellido}} </ion-label>
+      <ion-label>{{usuario.Nombre}} {{usuario.Apellido}}</ion-label>
+      <ion-button fill="outline" slot='end' color="success"><label style="font-size: 15px" >{{usuario.Cantidad}}</label></ion-button>
 
       
     </ion-item>

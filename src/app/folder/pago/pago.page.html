@@ -12,11 +12,11 @@
 
 
 
-  <ion-card>
-    <ion-card-header>
-    <ion-card-title>Actualizar valor Anuncio-Usuarios:</ion-card-title>
-  </ion-card-header>
-  <ion-button expand="block" style="width: 150px;margin:auto;margin-bottom: 15px;" (click)="actualizar()">Actualizar</ion-button>
+  <ion-card *ngIf='variables.ReseteoValores'>
+      <ion-card-header>
+      <ion-card-title>Cambiar rol todos a Usuarios</ion-card-title>
+    </ion-card-header>
+    <ion-button expand="block" style="width: 150px;margin:auto;margin-bottom: 15px;" (click)="alertVendedores()">Actualizar</ion-button>
   </ion-card>
 
   <!-- <ion-card>
@@ -26,11 +26,11 @@
   <ion-button expand="block" style="width: 150px;margin:auto;margin-bottom: 15px;" (click)="PremiumTemporal()">Actualizar</ion-button>
   </ion-card> -->
 
-  <ion-card>
+  <ion-card *ngIf='variables.ReseteoValores'>
     <ion-card-header>
-    <ion-card-title>Actualizar valor Rol-Usuarios:</ion-card-title>
+    <ion-card-title>Ocultar productos y locales</ion-card-title>
   </ion-card-header>
-  <ion-button expand="block" style="width: 150px;margin:auto;margin-bottom: 15px;" (click)="alert()">Actualizar</ion-button>
+  <ion-button expand="block" style="width: 150px;margin:auto;margin-bottom: 15px;" (click)="alertLocales()">Actualizar</ion-button>
   </ion-card>
 
 
